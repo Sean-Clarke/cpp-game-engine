@@ -1,0 +1,147 @@
+class Application {
+    Screen screen; // Main Menu, Local Room, Online Room, Settings, Loading 
+    Data data;
+    
+    Application::Application {
+    
+    }
+    
+    private changeScreen(int newScreen) {
+        screen = new Screen(newScreen);
+    }
+}
+
+class Menu {
+    
+    public int page;
+    
+
+}
+
+
+
+/*
+    Top level game class
+*/
+class Game {
+
+    private bool started;
+    private bool paused;
+    private bool endgame;
+    private int stepCount;
+    
+    public Game::Game(int humans, int characters [], int variant) {
+        started = false;
+        paused = false;
+        endgame = false;
+        stepCount = 0;
+        humans = characters.slice(0, humans);
+        bots = characters.slice(humans, characters.length);
+        
+    }
+
+    private init() {
+        started = true;
+    }
+    
+    private handlePlayers() {
+    
+    }
+    
+    private handleAI() {
+    
+    }
+    
+    private handleCharacters() {
+        characterManager.handlePlayers();
+        characterManager.handleAI();
+    }
+    
+    private render() {
+    
+    }
+
+    private step() {
+        while (!endgame) {
+            if (!paused) {
+                handleCharacters();
+                render();
+                stepCount++;
+            } else {
+                handlePause();
+            }
+        }
+        return 0;
+    }
+    
+    private resolveEndgame() {
+        displayStats()
+    }
+    
+    private main() {
+        init();
+        step();
+        resolveEndgame();
+        cleanup()
+        return 0
+    }
+
+};
+
+enum Action() {
+    
+}
+
+class Character() {
+
+
+
+}
+
+class Player() extends Character {
+    int actions [];
+    int choice;
+
+    public getActions() {};
+    public setActions() {};
+
+
+}
+
+class Bot() extends Character {
+    
+    int choice = 0;
+    
+    
+
+
+}
+
+class BotScheduler() {
+
+}
+
+class CharacterManager() {
+    private Array<Player> players;
+    private Array<Bot> colony;
+    private BotScheduler botmind;
+    public std::Map<> actionsMap;
+    
+    CharacterManager::CharacterManager() {
+    
+    
+    }
+    
+    CharacterManager::handleInput(int player) {
+        
+    }
+    
+    CharacterManager::handlePlayers() {
+    
+    }
+    
+    CharacterManager::handleBots() {
+    
+    }
+    
+}
